@@ -94,77 +94,72 @@ def drop_db():
 
 @app.cli.command('seed')
 def seed_db():
-  movie1 = Movie(
-    title = 'The Shawshank Redemption',
-    genre = 'Drama',
-    length = 160,
-    year_released = date(1994, 4, 13),
-    rating = 5
-  )
+    movie1 = Movie(
+        title = 'The Shawshank Redemption',
+        genre = 'Drama',
+        length = 160,
+        year_released = date(1994, 4, 13),
+        rating = 5
+    )
 
-  movie2 = Movie(
-    title = 'Fight Club',
-    genre = 'Drama',
-    length = 120,
-    year_released = date(1999, 6, 16),
-    rating = 5
-  )
+    movie2 = Movie(
+        title = 'Fight Club',
+        genre = 'Drama',
+        length = 120,
+        year_released = date(1999, 6, 16),
+        rating = 5
+        )
 
-  movie3 = Movie(
-    title = 'Joker',
-    genre = 'Drama',
-    length = 140,
-    year_released = date(2019, 6, 6),
-    rating = 5
-  )
+    movie3 = Movie(
+        title = 'Joker',
+        genre = 'Drama',
+        length = 140,
+        year_released = date(2019, 6, 6),
+        rating = 5
+        )
 
-  actor1 = Actor(
-    first_name = 'William Bradley',
-    last_name = 'Pitt',
-    gender = 'Male',
-    country = 'USA',
-    dob =  date(1963, 12, 18),
-    resides = 'Los Angeles, California'
-  )
+    actor1 = Actor(
+        first_name = 'William Bradley',
+        last_name = 'Pitt',
+        gender = 'Male',
+        country = 'USA',
+        dob =  date(1963, 12, 18),
+        resides = 'Los Angeles, California'
+    )
 
-  actor2 = Actor(
-    first_name = 'Chris',
-    last_name = 'Hemsworth',
-    gender = 'Male',
-    country = 'Australia',
-    dob =  date(1983, 8, 11),
-    resides = 'Broken Head, Australia'
-  )
+    actor2 = Actor(
+        first_name = 'Chris',
+        last_name = 'Hemsworth',
+        gender = 'Male',
+        country = 'Australia',
+        dob =  date(1983, 8, 11),
+        resides = 'Broken Head, Australia'
+    )
 
-  actor3 = Actor(
-    first_name = 'Keanu',
-    last_name = 'Reeves',
-    gender = 'Male',
-    country = 'USA',
-    dob =  date(1964, 9, 2),
-    resides = 'Honolulu, Hawaii'
-  )
+    actor3 = Actor(
+        first_name = 'Keanu',
+        last_name = 'Reeves',
+        gender = 'Male',
+        country = 'USA',
+        dob =  date(1964, 9, 2),
+        resides = 'Honolulu, Hawaii'
+    )
 
-  actor4 = Actor(
-    first_name = 'Adam',
-    last_name = 'Sandler',
-    gender = 'Male',
-    country = 'USA',
-    dob =  date(1966, 9, 9),
-    resides = 'Los Angeles, California'
-  )
+    actor4 = Actor(
+        first_name = 'Adam',
+        last_name = 'Sandler',
+        gender = 'Male',
+        country = 'USA',
+        dob =  date(1966, 9, 9),
+        resides = 'Los Angeles, California'
+    )
 
-  db.session.add(movie1)
-  db.session.add(movie2)
-  db.session.add(movie3)
-  db.session.add(actor1)
-  db.session.add(actor2)
-  db.session.add(actor3)
-  db.session.add(actor4)
-  db.session.commit()
-  print('\n====================================================================')
-  print('================== Database seeded successfully ! ==================')
-  print('====================================================================\n')
+    db.session.add(movie1, movie2, movie3)
+    db.session.add(actor1, actor2, actor3, actor4)
+    db.session.commit()
+    print('\n====================================================================')
+    print('================== Database seeded successfully ! ==================')
+    print('====================================================================\n')
 
 # ROUTING AREA
 
